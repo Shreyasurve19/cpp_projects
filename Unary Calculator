@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cmath>  // For math functions
+using namespace std;
+
+int main() {
+    int choice;
+    double num;
+
+    cout << "UNARY CALCULATOR.\n";
+    cout << " 1. Square\n 2. Square Root\n 3. Negation\n 4. Logarithm\n 5. Sine\n";
+    cout << "Enter your choice (1-5): ";
+    cin >> choice;
+
+    cout << "Enter a number: ";
+    cin >> num;
+
+    switch (choice) {
+        case 1: 
+            cout << "Square: " << num * num << endl;
+            break;
+        case 2: 
+            if (num < 0)
+                cout << "Square root of a negative number is not defined.\n";
+            else
+                cout << "Square Root: " << sqrt(num) << endl;
+            break;
+        case 3: 
+            cout << "Negation: " << -num << endl;
+            break;
+        case 4: 
+            if (num <= 0)
+                cout << "Logarithm is only defined for positive numbers.\n";
+            else
+                cout << "Logarithm: " << log(num) << endl;
+            break;
+        case 5: 
+            cout << "Sine(in radians): " << sin(num) << endl;
+            break;
+        default: 
+            cout << "Invalid choice!\n";
+    }
+
+    return 0;
+}
