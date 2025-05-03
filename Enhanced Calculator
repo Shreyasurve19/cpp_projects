@@ -1,0 +1,62 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double num1, num2;
+    char optr;
+    
+    cout << "ENHANCED CALCULATOR. " << endl;
+    cout << "Operators: +, -, *, /, ^, %" << endl;
+    
+    cout << "Enter the first digit: ";
+    cin >> num1;
+    cout << "Enter the operator: ";
+    cin >> optr;
+    
+    if (optr == '%') {
+        int intNum1, intNum2;
+        cout << "Enter the second digit: ";
+        cin >> intNum2;
+        
+        if (cin.fail()) {
+            cout << "Error: Modulus requires integers.\n";
+            return 1;
+        }
+        
+        intNum1 = static_cast<int>(num1); //Convert to int for modulus
+        if (intNum2 != 0)
+           cout << "Result: " << intNum1 % intNum2 << "\n";
+       else 
+         cout << "Error: Modulus by zero is not possible.\n";
+    }
+    else {
+        cout << "Enter the second digit: ";
+        cin >> num2;
+    
+    switch (optr) {
+        case'+':
+          cout << "Result: " << num1 + num2 << "\n";
+          break;
+        case'-':
+          cout << "Result: " << num1 - num2 << "\n";
+          break;
+        case'*':
+          cout << "Result: " << num1 * num2 << "\n";
+          break;
+        case'/':
+          if (num2 != 0)
+             cout << "Result: " << num1 / num2 << "\n";
+          else
+            cout << "Error: Can't divide by zero.\n";
+          break;
+        case'^':
+          cout << "Result: " << pow(num1, num2) << "\n";
+          break;
+      default: 
+        cout << "Error: Invalid operator!\n";
+    }
+    }
+    return 0;
+}
+  
